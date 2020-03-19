@@ -75,12 +75,16 @@ public class Main {
 
         ArrayList<String> listC = new ArrayList<String>();
         Collections.reverse(listB);
-        listC.addAll(listA);
-        listC.addAll(listB);
+
+        Iterator<String> iteratorC1 = listC.iterator();
 
         for (int i = 0; i < listA.size(); i++) {
-            System.out.println(listA.get(i));
-            System.out.println(listB.get(i));
+            listC.add(listA.get(i));
+            listC.add(listB.get(i));
+            iteratorC1 = listC.iterator();
+        }
+        while (iteratorC1.hasNext()){
+            System.out.println(iteratorC1.next());
         }
 
         System.out.println("___________________");
@@ -93,9 +97,9 @@ public class Main {
             }
         });
 
-        Iterator<String> iteratorC = listC.iterator();
-        while (iteratorC.hasNext()) {
-            System.out.println(iteratorC.next());
+        Iterator<String> iteratorC2 = listC.iterator();
+        while (iteratorC2.hasNext()) {
+            System.out.println(iteratorC2.next());
         }
     }
 }
